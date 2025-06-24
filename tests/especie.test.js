@@ -24,6 +24,7 @@ describe('Gestión de EspeciePato', () => {
       habitat: 'Pantanos',
       ubicacionGeografica: 'Centroamérica',
       alimentos: ['Algas'],
+      origenAlimento: 'Vegetal',
       coloresPlumaje: ['#0000ff'],
       imagenes: ['pato4.jpg'],
     });
@@ -61,23 +62,44 @@ describe('Gestión de EspeciePato', () => {
         tipoSonido: 'Grave',
         habitat: 'Lagos',
         ubicacionGeografica: 'América del Sur',
-        alimentos: ['Semillas', 'Tombinos'],
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
         coloresPlumaje: ['#000'],
         imagenes: ['pato.jpg'],
       });
     }).toThrow('El nombre científico es obligatorio');
   });
 
-  //Test 6 --> No modifcar especie inexistete
+  //Test N°6 --> No modifcar especie inexistete
   test('No modificar especie inexistente', () => {
     expect(() =>
       modificarEspecie(123456, { nombre: 'pato modificado' })
     ).toThrow('Especie no encontrada');
   });
 
-  // Test 7 --> No eliminar especie inexistente
+  // Test N°7 --> No eliminar especie inexistente
   test('No eliminar una especie inexistente', () => {
     const especieEliminada = eliminarEspecie(123456);
     expect(especieEliminada).toBe(false);
   });
 });
+
+//Test N°8 y N°9 en "usuario.test.js"
+
+  // Test N°10 - Octavio
+  test('El alimento ALGAS debe ser VEGETAL', () => {
+    const especie = crearEspecie({
+      nombre: 'Pato Algas',
+      nombreCientifico: 'Anas algas',
+      tamaño: 'Pequeño',
+      tipoVuelo: 'Ligero',
+      tipoSonido: 'Chillido',
+      habitat: 'Pantanos',
+      ubicacionGeografica: 'Centroamérica',
+      alimentos: ['Algas'],
+      origenAlimento: 'Vegetal',
+      coloresPlumaje: ['#00ff00'],
+      imagenes: ['pato5.jpg'],
+    });
+    expect(especie.origenAlimento).toBe('Vegetal');
+  });

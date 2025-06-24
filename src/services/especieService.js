@@ -52,6 +52,9 @@ export const validarCampos = (datos) => {
   if (!Array.isArray(datos.alimentos) || datos.alimentos.length === 0) {
     throw new Error('Los alimentos deben ser un array no vacío');
   }
+  if (!datos.origenAlimento || datos.origenAlimento.trim() === '') {
+    throw new Error('El origen del alimento es obligatorio');
+  }
   if (
     !Array.isArray(datos.coloresPlumaje) ||
     datos.coloresPlumaje.length === 0

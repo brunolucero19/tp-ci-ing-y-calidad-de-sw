@@ -8,7 +8,8 @@ export let especies = [
     tipoSonido: 'Grave',
     habitat: 'Lagunas',
     ubicacionGeografica: 'Sudamérica',
-    alimentos: ['Insectos', 'Granos'],
+    alimentos: ['Insectos', 'Lombrices'],
+    origenAlimento: 'Animal',
     coloresPlumaje: ['#000000', '#ffffff'],
     imagenes: ['pato1.jpg'],
   },
@@ -22,6 +23,7 @@ export let especies = [
     habitat: 'Ríos',
     ubicacionGeografica: 'Argentina',
     alimentos: ['Plantas acuáticas'],
+    origenAlimento: 'Vegetal',
     coloresPlumaje: ['#ff0000'],
     imagenes: ['pato2.jpg'],
   },
@@ -35,9 +37,10 @@ export let especies = [
     habitat: 'Lagos',
     ubicacionGeografica: 'América del Norte',
     alimentos: ['Peces', 'Insectos'],
+    origenAlimento: 'Animal',
     coloresPlumaje: ['#00ff00'],
     imagenes: ['pato3.jpg'],
   },
-]
+];
 
-export let idCounter = 4
+export let idCounter = 4;

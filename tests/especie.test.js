@@ -55,13 +55,13 @@ describe('Gestión de EspeciePato', () => {
   test('Validar campos obligatorios', () => {
     expect(() => {
       validarCampos({
-        nombre: 'Pato Emi',
+        nombre: 'Pato prueba',
         tamaño: 'Grande',
         tipoVuelo: 'Ligero',
         tipoSonido: 'Grave',
         habitat: 'Lagos',
         ubicacionGeografica: 'América del Sur',
-        alimentos: ['Semillas', 'Ontiveros'],
+        alimentos: ['Semillas', 'Tombinos'],
         coloresPlumaje: ['#000'],
         imagenes: ['pato.jpg'],
       });

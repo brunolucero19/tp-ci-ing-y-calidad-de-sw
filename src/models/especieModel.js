@@ -24,20 +24,7 @@ export let especies = [
     alimentos: ['Plantas acuáticas'],
     coloresPlumaje: ['#ff0000'],
     imagenes: ['pato2.jpg'],
-  },
-  {
-    id: 3,
-    nombre: 'Pato Real',
-    nombreCientifico: 'Anas platyrhynchos',
-    tamaño: 'Grande',
-    tipoVuelo: 'Ligero',
-    tipoSonido: 'Cuac-cuac',
-    habitat: 'Lagos',
-    ubicacionGeografica: 'América del Norte',
-    alimentos: ['Peces', 'Insectos'],
-    coloresPlumaje: ['#00ff00'],
-    imagenes: ['pato3.jpg'],
-  },
+  }
 ]
 
-export let idCounter = 4
+export let idCounter = especies.length + 1;

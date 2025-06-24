@@ -10,7 +10,7 @@ export let especies = [
     ubicacionGeografica: 'Sudamérica',
     alimentos: ['Insectos', 'Granos'],
     coloresPlumaje: ['#000000', '#ffffff'],
-    imagenes: ['pato1.jpg'],
+    imagenes: ['pato1.png']
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export let especies = [
     ubicacionGeografica: 'Argentina',
     alimentos: ['Plantas acuáticas'],
     coloresPlumaje: ['#ff0000'],
-    imagenes: ['pato2.jpg'],
+    imagenes: ['pato2.jpg']
   },
   {
     id: 3,
@@ -36,8 +36,8 @@ export let especies = [
     ubicacionGeografica: 'América del Norte',
     alimentos: ['Peces', 'Insectos'],
     coloresPlumaje: ['#00ff00'],
-    imagenes: ['pato3.jpg'],
-  },
+    imagenes: ['pato3.jpg']
+  }
 ]
 
 export let idCounter = 4

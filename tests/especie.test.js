@@ -6,11 +6,13 @@ import {
 } from '../src/services/especieService.js'
 
 describe('Gestión de EspeciePato', () => {
+  // Test N°1
   test('Debe listar las 3 especies iniciales', () => {
     const lista = listarEspecies()
     expect(lista.length).toBeGreaterThanOrEqual(3)
   })
 
+  // Test N°2
   test('Debe crear una nueva especie', () => {
     const nueva = crearEspecie({
       nombre: 'Pato Azul',
@@ -28,6 +30,7 @@ describe('Gestión de EspeciePato', () => {
     expect(nueva.nombre).toBe('Pato Azul')
   })
 
+  // Test N°3
   test('Debe modificar una especie existente', () => {
     const especie = crearEspecie({
       nombre: 'A cambiar',
@@ -37,6 +40,7 @@ describe('Gestión de EspeciePato', () => {
     expect(modificado.nombre).toBe('Nombre Nuevo')
   })
 
+  // Test N°4
   test('Debe eliminar una especie existente', () => {
     const especie = crearEspecie({
       nombre: 'A borrar',

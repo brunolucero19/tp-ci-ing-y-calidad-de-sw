@@ -103,3 +103,58 @@ describe('Gestión de EspeciePato', () => {
     });
     expect(especie.origenAlimento).toBe('Vegetal');
   });
+
+
+  //Test N°11 Validar campos enviado, nombre
+  test('Validar nombre', () => {
+    expect(() => {
+      validarCampos({
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El nombre es obligatorio');
+  });
+
+  //Test N°12 Validar campos enviado, tamaño
+  test('Validar campos obligatorios', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El tamaño es obligatorio');
+  });
+
+  //Test N°13 Validar campos enviado, tipoVuelo
+  test('Validar campos obligatorios', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El tipo de vuelo es obligatorio');
+  });

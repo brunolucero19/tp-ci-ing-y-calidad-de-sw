@@ -124,7 +124,7 @@ describe('Gestión de EspeciePato', () => {
   });
 
   //Test N°12 Validar campos enviado, tamaño
-  test('Validar campos obligatorios', () => {
+  test('Validar tamaño', () => {
     expect(() => {
       validarCampos({
         nombre: 'Pato prueba',
@@ -142,7 +142,7 @@ describe('Gestión de EspeciePato', () => {
   });
 
   //Test N°13 Validar campos enviado, tipoVuelo
-  test('Validar campos obligatorios', () => {
+  test('Validar tipoVuelo', () => {
     expect(() => {
       validarCampos({
         nombre: 'Pato prueba',
@@ -157,4 +157,135 @@ describe('Gestión de EspeciePato', () => {
         imagenes: ['pato.jpg'],
       });
     }).toThrow('El tipo de vuelo es obligatorio');
+  });
+
+  //Test N°14 en "usuario.test.js"
+
+  //Test N°15 Validar campos enviado, tipoSonido
+  test('Validar tipoSonido', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El tipo de sonido es obligatorio');
+  });
+
+  //Test N°16 Validar campos enviado, habitat
+  test('Validar habitat', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El hábitat es obligatorio');
+  });
+
+  //Test N°17 Validar campos enviado, ubicacionGeografica
+  test('Validar ubicacionGeografica', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('La ubicación geográfica es obligatoria');
+  });
+
+  //Test N°18 Validar campos enviado, alimentos
+  test('Validar alimentos', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: [],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('Los alimentos deben ser un array no vacío');
+  });
+
+  //Test N°19 Validar campos enviado, origenAlimento
+  test('Validar origenAlimento', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        coloresPlumaje: ['#000'],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('El origen del alimento es obligatorio');
+  });
+
+  //Test N°20 Validar campos enviado, coloresPlumaje
+  test('Validar coloresPlumaje', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: [],
+        imagenes: ['pato.jpg'],
+      });
+    }).toThrow('Los colores de plumaje deben ser un array no vacío');
+  });
+
+  //Test N°21 Validar campos enviado, imagenes
+  test('Validar imagenes', () => {
+    expect(() => {
+      validarCampos({
+        nombre: 'Pato prueba',
+        nombreCientifico: 'Anas algas',
+        tamaño: 'Grande',
+        tipoVuelo: 'Ligero',
+        tipoSonido: 'Grave',
+        habitat: 'Lagos',
+        ubicacionGeografica: 'América del Sur',
+        alimentos: ['Semillas', 'Trigo'],
+        origenAlimento: 'Vegetal',
+        coloresPlumaje: ['#000'],
+        imagenes: [],
+      });
+    }).toThrow('Las imágenes deben ser un array no vacío');
   });

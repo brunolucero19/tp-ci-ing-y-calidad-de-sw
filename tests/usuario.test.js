@@ -1,8 +1,8 @@
 import {
-  crearUsuario,
   iniciarSesion,
   obtenerUsuarios,
 } from '../src/services/usuarioService.js';
+import { describe, test, expect } from '@jest/globals';
 
 describe('Gestión de Usuarios', () => {
   // Test N°8 - Octavio
